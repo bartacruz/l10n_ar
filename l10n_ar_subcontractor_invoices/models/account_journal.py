@@ -1,17 +1,10 @@
-# -*- coding: utf-8 -*-
-##############################################################################
-# For copyright and license notices, see __manifest__.py file in module root
-# directory
-##############################################################################
-
-from odoo import models, api, fields, _
+from odoo import models, fields
 import logging
-from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
 
 class AccountJournal(models.Model):
     _inherit = "account.journal"
-    
-    invoiced_by_subcontractor = fields.Boolean(string=_('Invoices by subcontractors'))
+
+    invoiced_by_subcontractor = fields.Boolean(string="Invoices by subcontractors")

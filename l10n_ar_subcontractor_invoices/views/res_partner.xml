@@ -10,7 +10,7 @@
             <div name="button_box" position="inside">
                 <button class="oe_stat_button" type="object"
                     name="action_open_subcontractor_invoices"
-                    attrs="{'invisible': [('subcontractor_invoice_count', '=', 0)]}"
+                    invisible="subcontractor_invoice_count == 0"
                     icon="fa-pencil-square-o">
                     <field string="Sub Invoices" name="subcontractor_invoice_count" widget="statinfo" />
                 </button>

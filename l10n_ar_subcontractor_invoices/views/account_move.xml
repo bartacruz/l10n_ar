@@ -13,7 +13,7 @@
         </field>
     </record>
 
-    <template id="report_invoice_document" inherit_id="l10n_ar.report_invoice_document">
+    <template id="report_invoice_document" inherit_id="l10n_ar.report_invoice_document" priority="110">
         <t t-set="header_address" position="replace">
             <t t-if="o.subcontractor_partner_id">
                 <t t-set="header_address" t-value="o.subcontractor_partner_id" />
@@ -23,12 +23,6 @@
             </t>
 
         </t>
-    </template>
-
-    <template id="custom_header" inherit_id="l10n_ar_ux.custom_header">
-        <img t-if="header_address.image_1920" position="attributes">
-            <attribute name="t-if"> header_address.image_1920 and not o.subcontractor_partner_id</attribute>
-        </img>
     </template>
 
     <record id="account_invoice_view_tree" model="ir.ui.view">
